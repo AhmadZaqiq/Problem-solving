@@ -15,7 +15,7 @@ string ReadName(string Text)
 
 string EncryptText(string Name, const short Key)
 {
-	for (int i = 0; i <= Name.length(); i++)
+	for (int i = 0; i < Name.length(); i++)
 	{
 		Name[i] = char(int(Name[i]) + Key);
 	}
@@ -24,7 +24,7 @@ string EncryptText(string Name, const short Key)
 
 string DecryptText(string Encrypt, const short Key)
 {
-	for (int i = 0; i <= Encrypt.length(); i++)
+	for (int i = 0; i < Encrypt.length(); i++)
 	{
 		Encrypt[i] = char(int(Encrypt[i]) - Key);
 	}
