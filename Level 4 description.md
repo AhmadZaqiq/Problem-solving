@@ -68,7 +68,11 @@
 ### Problem 64: Date to String
 ### Problem 65: Format Date
 
-*Note: Problems 20 to 32 in One Code*
-*Note: Problems 33 to 46 in One Code*
-*Note: Problems 47 to 53 in One Code*
-*Note: Problems 63 and 64 in One Code*
+---
+
+## Important Notes:
+
+### *Note: Problems 20 to 32 in One Code*
+### *Note: Problems 33 to 46 in One Code*
+### *Note: Problems 47 to 53 in One Code*
+### *Note: Problems 63 and 64 in One Code*
