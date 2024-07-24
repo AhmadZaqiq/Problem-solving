@@ -1,4 +1,3 @@
-```markdown
 # Problem-solving Solutions to Various Programming Problems and Coding Challenges
 
 ## Problems Description:
