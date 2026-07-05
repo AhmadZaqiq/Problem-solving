@@ -18,12 +18,13 @@ class Program
         return Number;
     }
 
-    static void ConvertDecimalToBinary(Stack<int> stDecimal, int Number)
+    static Stack<int> ConvertDecimalToBinary(int Number)
     {
+        Stack<int> stDecimal = new Stack<int>();
+
         if (Number == 0)
         {
             stDecimal.Push(0);
-            return;
         }
 
         while (Number != 0)
@@ -31,6 +32,8 @@ class Program
             stDecimal.Push(Number % 2);
             Number /= 2;
         }
+
+        return stDecimal;
     }
 
     static void PrintBinaryNumber(Stack<int> stDecimal)
@@ -44,9 +47,8 @@ class Program
     static void Main()
     {
         int Number = ReadNumber();
-        Stack<int> stDecimal = new Stack<int>();
 
-        ConvertDecimalToBinary(stDecimal, Number);
+        Stack<int> stDecimal = ConvertDecimalToBinary(Number);
 
         PrintBinaryNumber(stDecimal);
 
