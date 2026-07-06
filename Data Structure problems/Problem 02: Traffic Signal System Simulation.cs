@@ -3,29 +3,29 @@ using System.Collections.Generic;
 
 class Program
 {
-    static Stack<string> InitializeTraffic()
+    static Queue<string> InitializeTraffic()
     {
-        Stack<string> stTraffic = new Stack<string>();
+        Queue<string> qTraffic = new Queue<string>();
 
-        stTraffic.Push("Car 1");
-        stTraffic.Push("Truck 1");
-        stTraffic.Push("Bike 1");
-        stTraffic.Push("Bus 1");
+        qTraffic.Enqueue("Car 1");
+        qTraffic.Enqueue("Truck 1");
+        qTraffic.Enqueue("Bike 1");
+        qTraffic.Enqueue("Bus 1");
 
-        return stTraffic;
+        return qTraffic;
     }
 
-    static void PrintWaitingVehicles(Stack<string> stTraffic)
+    static void PrintWaitingVehicles(Queue<string> qTraffic)
     {
         Console.Write("Vehicles Waiting: ");
 
-        if (stTraffic.Count == 0)
+        if (qTraffic.Count == 0)
         {
             Console.Write("No vehicles waiting");
             return;
         }
 
-        foreach (string item in stTraffic)
+        foreach (string item in qTraffic)
         {
             Console.Write(item + ", ");
         }
@@ -33,31 +33,30 @@ class Program
         Console.WriteLine();
     }
 
-    static void ProcessTraffic(Stack<string> stTraffic)
+    static void ProcessTraffic(Queue<string> qTraffic)
     {
-        int Count = stTraffic.Count;
-
-        for (int i = 0; i < Count; i++)
+        while (qTraffic.Count > 0)
         {
-            Console.WriteLine("\n" + stTraffic.Peek() + " Has Passed the Signal");
+            Console.WriteLine("\n" + qTraffic.Peek() + " Has Passed the Signal");
 
-            stTraffic.Pop();
+            qTraffic.Dequeue();
 
-            PrintWaitingVehicles(stTraffic);
+            PrintWaitingVehicles(qTraffic);
         }
     }
 
     static void Main()
     {
-        Stack<string> stTraffic = InitializeTraffic();
+        Queue<string> qTraffic = InitializeTraffic();
 
-        Console.WriteLine("Traffic Signal Simulation Started...");
+        PrintWaitingVehicles(qTraffic);
 
-        ProcessTraffic(stTraffic);
+        Console.WriteLine("\nTraffic Signal Simulation Started...");
+
+        ProcessTraffic(qTraffic);
 
         Console.WriteLine("\nTraffic Signal Simulation Ended");
 
         Console.ReadKey();
     }
-
 }
